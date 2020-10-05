@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OR calculator</title>
+    <style>
+      input {
+        outline: none;
+        margin: 2px;
+        width: 200px;
+        height: 20px;
+        border-radius: 5px;
+        border: 0.5px solid grey;
+        padding: 5px;
+      }
+      button {
+        outline: none;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        font-weight: 900;
+        border-radius: 5px;
+        background-color: rgb(1, 103, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <div>
+        <input id="a" type="number" placeholder="Open Book" />
+      </div>
+      <div>
+        <input id="b" type="number" placeholder="Assignment" />
+      </div>
+      <div>
+        <input id="c" type="number" placeholder="Short Anser" />
+      </div>
+      <button id="calc">Calculate</button>
+    </center>
+  </body>
+  <script>
+    document.getElementById("calc").addEventListener("click", () => {
+      let a = document.getElementById("a").value;
+      let b = document.getElementById("b").value;
+      let c = document.getElementById("c").value;
+      if (a.value == "" || b.value == "" || c.value == "")
+        return alert("all field required");
+      a = parseFloat(a);
+      b = parseFloat(b);
+      c = parseFloat(c);
+      console.log(a, b, c);
+      alert(
+        ((a / 25) * 100 * 0.5 + (b / 20) * 100 * 0.3 + (c / 15) * 100 * 0.2) / 2
+      );
+    });
+  </script>
+</html>
